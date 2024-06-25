@@ -1,0 +1,30 @@
+format:
+rule name
+FIND
+REPLACE
+ONLYIFINCLUDES
+
+replace twitter/x links with fxtwitter
+http(?:s)?://(?:www\.)?(?:twitter|x)\.com(/[^/]+/status/\d+)
+https://fxtwitter.com$1
+[NONE, DON'T ADD]
+
+replace twitch links with fxtwitch
+https?:\/\/(?:clips\.twitch\.tv|(?:www\.)?twitch\.tv\/\w+\/clip)\/([A-Za-z0-9\-_]+)
+https://clips.fxtwitch.tv/$1
+[NONE, DON'T ADD]
+
+replace reddit links with rxddit
+http(?:s)?://(?:[\w-]+?\.)?reddit\.com
+https://rxddit.com
+[NONE, DON'T ADD]
+
+replace instagram links with instagramez
+http(?:s)?://(?:www\.)?instagram\.com/(reel|p)
+https://www.instagramez.com/$1
+[NONE, DON'T ADD]
+
+replace shorts with normal videos
+https?:\/\/(?:www\.)?youtube\.com\/shorts\/([\w\-]+)
+https://youtu.be/$1
+[NONE, DON'T ADD]
